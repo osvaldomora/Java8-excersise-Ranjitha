@@ -23,12 +23,13 @@ public class ExcersiseTwo {
 
 				return dateTime.getHour()+":"+dateTime.getMinute();//return hour and minut
 			}
-					).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))//counts the frequency of every element.
-		      .entrySet()
+					).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))//grouping By hour
+//			.forEach((x,y)->System.out.println("key:"+x +" "+ "value:"+y)); 
+			.entrySet()
 		      .stream()
 		      .max(Map.Entry.comparingByValue()) //looks up the entry with the highest frequency
-		      .ifPresent(x->System.out.println(x)); 
-//			
+		      .ifPresent(x->System.out.println("the hour more frequency is:"+x.getKey()+"  the frequency is:"+ x.getValue()) ); 
+			
 
 		} catch (IOException e) {
 			e.printStackTrace();

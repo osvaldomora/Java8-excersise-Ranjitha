@@ -53,6 +53,8 @@ public class Java8HomeworkApplication implements CommandLineRunner {
 				.getAsDouble();
 
 		System.out.println(avg);
+		
+		
 
 	
 		

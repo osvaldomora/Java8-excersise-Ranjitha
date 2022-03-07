@@ -39,7 +39,7 @@ public class Student {
 			   inverseJoinColumns = @JoinColumn(name="idCourse")			
 			)*/
 /*    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,fetch=FetchType.EAGER)
-    @JoinColumn(name = "student_id")//it is de foreig key of post_comment */
+    @JoinColumn(name = "student_id")//it is de foreig key  */
 	
     @OneToMany(
             mappedBy = "student",

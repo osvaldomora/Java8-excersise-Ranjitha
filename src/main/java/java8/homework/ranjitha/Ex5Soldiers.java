@@ -25,7 +25,7 @@ public class Ex5Soldiers {
         /**
          * soldiersList.indexOf(str)+1) ->>> get the index of each element + 1 to start in position 1
          */
-		Predicate<String> isEvenIndex = str -> (soldiersList.indexOf(str)+1)%2 == 0; //filter to get all even elements
+		Predicate<String> isEvenIndex = str -> (soldiersList.indexOf(str)+1)%2 == 0; //filter to get all even(par) elements
 		List<String> soldiersList1 = new ArrayList<>();
 		
 		if(soldiersList.size() == 2) return soldiersList; //Stop condition

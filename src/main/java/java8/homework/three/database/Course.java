@@ -37,8 +37,10 @@ public class Course {
 	@Override
 	public String toString() {
 		return "Course [id=" + id + ", name=" + name + ", dateBegin=" + dateBegin + ", dateEnd=" + dateEnd
-				+ ", student=" + student + "]";
+				+ ", average=" + average + ", student=" + student + "]";
 	}
+
+
 
 	
 

@@ -1,8 +1,10 @@
 package java8.homework.ranjitha;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
+
 //Given a string print every third character only if it a vowel
 public class Ex1OnlyVocal {
 
@@ -13,16 +15,14 @@ public class Ex1OnlyVocal {
 		StringBuilder st = new StringBuilder();
 		Stream<Character> characterStream = input.chars().mapToObj(c -> (char) c);
 
-		Predicate<Character> vow= ch ->( ch.equals('a') || ch.equals('e') || ch.equals('i') || ch.equals('o') || ch.equals('u'));
-//		BiPredicate<Integer,Character> vow= (inc,ch) ->(inc % 3) && ( ch.equals('a') || ch.equals('e') || ch.equals('i') || ch.equals('o') || ch.equals('u'));
+//		Predicate<Character> vow= ch ->( ch.equals('a') || ch.equals('e') || ch.equals('i') || ch.equals('o') || ch.equals('u'));
+
+		BiPredicate<Integer, Character> vow2 = (inc, ch) -> (inc % 3 == 0)
+				&& (ch.equals('a') || ch.equals('e') || ch.equals('i') || ch.equals('o') || ch.equals('u'));
 
 		characterStream.forEach(x -> {
-
-			if (count.get() % 3 == 0
-					&& vow.test(x)) { 
-//				System.out.print(x);
+			if (vow2.test(count.get(), x)) {
 				st.append(x);
-
 			}
 
 			count.getAndIncrement();
